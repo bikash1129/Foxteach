@@ -1,0 +1,230 @@
+/* CSS Keyframes */
+@keyframes background-grow-up {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes left-slide-in {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes right-slide-in {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes navbar-slide-down {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Navbar animation */
+.navbar {
+  opacity: 0;
+  transform: translateY(-100%);
+  animation: navbar-slide-down 0.5s ease-out forwards;
+}
+
+.background-overlay {
+  
+  opacity: 0;
+  transform: scale(0);
+  animation: background-grow-up 0.8s ease-out forwards;
+  animation-iteration-count: 1;
+}
+
+/* Left content animation */
+.left-content {
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: left-slide-in 0.8s ease-out forwards;
+}
+
+/* Right image animation */
+.right-image {
+  opacity: 0;
+  transform: translateX(100%);
+  animation: right-slide-in 0.8s ease-out forwards;
+}
+
+@media (max-width: 768px) {
+  .background-overlay {
+    display: none; /* Hide background image */
+  }
+
+
+}
+/* Responsive styles */
+@media (max-width: 640px) {
+
+  .left-content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    /* align-items: flex-start; */
+  }
+
+  
+
+  .left-content .text-5xl {
+    font-size: 2rem;
+  }
+}
+
+
+/* Keyframe Animations */
+@keyframes grow-right-bottom-left-top {
+  0% {
+    transform: scale(0) translate(100%, 100%);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes grow-bottom-top {
+  0% {
+    transform: scale(0) translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes grow-left-bottom-right-top {
+  0% {
+    transform: scale(0) translate(-100%, 100%);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+}
+
+/* Assign Animations to Classes */
+.card-grow-right-bottom-left-top {
+  animation: grow-right-bottom-left-top 1s ease-out forwards;
+}
+
+.card-grow-bottom-top {
+  animation: grow-bottom-top 1s ease-out forwards;
+}
+
+.card-grow-left-bottom-right-top {
+  animation: grow-left-bottom-right-top 1s ease-out forwards;
+}
+
+
+
+
+/* AOS Custom Keyframes */
+
+/* First Card: Grow from right bottom to left top */
+[data-aos="grow-right-bottom-left-top"] {
+  opacity: 0;
+  transform: scale(0) translate(100%, 100%);
+}
+
+[data-aos="grow-right-bottom-left-top"].aos-animate {
+  opacity: 1;
+  transform: scale(1) translate(0, 0);
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+/* Second Card: Grow from bottom to top */
+[data-aos="grow-bottom-top"] {
+  opacity: 0;
+  transform: scale(0) translateY(100%);
+}
+
+[data-aos="grow-bottom-top"].aos-animate {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+/* Third Card: Grow from left bottom to right top */
+[data-aos="grow-left-bottom-right-top"] {
+  opacity: 0;
+  transform: scale(0) translate(-100%, 100%);
+}
+
+[data-aos="grow-left-bottom-right-top"].aos-animate {
+  opacity: 1;
+  transform: scale(1) translate(0, 0);
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+
+
+
+[data-aos="grow-bottom-right"] {
+  opacity: 0;
+  transform: scale(0) translate(100%, 100%);
+}
+
+/* Animated State */
+[data-aos="grow-bottom-right"].aos-animate {
+  opacity: 1;
+  transform: scale(1) translate(0, 0);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+
+
+[data-aos="zoom-in"] {
+  transition: transform 0.6s ease-out, font-size 0.6s ease-out;
+}
+
+[data-aos="zoom-in"].aos-animate {
+  transform: scale(1.2); /* Enlarge the text on scroll */
+  font-size: 1.5rem; /* Increase the font size */
+}
+
+[data-aos="zoom-out"] {
+  transition: transform 0.6s ease-out, font-size 0.6s ease-out;
+}
+
+[data-aos="zoom-out"].aos-animate {
+  transform: scale(0.8); /* Shrink the text when it exits the viewport */
+  font-size: 1rem; /* Smaller font size when scaled down */
+}
+
+@keyframes top-down {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-top-down {
+  animation: top-down 2s ease-in-out infinite; /* Increased duration to 5s for slower speed */
+}

@@ -1,0 +1,6 @@
+.swiper-button-prev,
+.swiper-button-next {
+  background: none !important;
+  border: none !important;   
+  color: inherit !important;  
+}

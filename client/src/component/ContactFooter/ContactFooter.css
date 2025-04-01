@@ -1,0 +1,12 @@
+.animate-fadeIn {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  
+  .animate-fadeOut {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  

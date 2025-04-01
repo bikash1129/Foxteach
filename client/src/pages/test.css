@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+
+@keyframes moveCards {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.cards-container {
+  display: flex;
+  overflow-x: hidden;
+  animation: moveCards 10s linear infinite;
+}
+
+.card-item {
+  min-width: 250px;
+  margin-right: 20px;
+}
+
+
+
+.wrapper {
+  max-width: 60em;
+  margin: 0 auto;
+}
+
+.scroll-cards {
+  counter-reset: card;
+  position: relative;
+  display: block;
+  padding-bottom: 10vh; /* Reduced padding to avoid large gaps */
+}
+
+.scroll-cards > .scroll-cards__item + .scroll-cards__item {
+  margin-top: 30vh; /* Space between cards */
+}
+
+.scroll-cards__item {
+  --offset: 0;
+  color: #000;
+  position: sticky;
+  top: max(16vh, 8em); /* Adjust top position for better spacing */
+  min-height: 12em; /* Reduced the minimum height */
+  max-width: 50%; /* Reduced width for a more compact appearance */
+  width: 40%; /* Adjusted width */
+  margin: 0 auto; /* Center the cards */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Added box shadow */
+  border-radius: 10px;
+  overflow: hidden; /* Ensure content stays within border-radius */
+  transition: transform 0.3s ease, margin-left 0.3s ease; /* Transition for the shift effect */
+}
+
+.scroll-cards__item .relative {
+  border-radius: 10px;
+}
+
+.scroll-cards__item:nth-child(1) {
+  transform: translateX(0%); /* First card stays in place */
+}
+
+.scroll-cards__item:nth-child(2) {
+  transform: translateX(10%); /* Second card shifts slightly to the right */
+}
+
+.scroll-cards__item:nth-child(3) {
+  transform: translateX(20%); /* Third card shifts further right */
+}
+
+.scroll-cards__item:nth-child(4) {
+  transform: translateX(30%); /* Fourth card shifts even further */
+}
+
+/* Continue for other cards as needed, increasing the translateX value */
+.scroll-cards__item:nth-child(n+5) {
+  transform: translateX(40%); /* Cards 5 and onwards shift more */
+}
+
+h2 {
+  font-size: 1.25em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+p {
+  font-size: 1.25em;
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 37em) {
+  h1 {
+    font-size: 3em;
+  }
+  .scroll-cards__item {
+    --offset: 1em;
+    max-width: 85%; /* Further reduced max-width for medium screens */
+    min-height: 14em; /* Adjusted height for medium screens */
+  }
+}
+
+@media screen and (min-width: 62em) {
+  .scroll-cards h1 {
+    font-size: 3em;
+  }
+  .scroll-cards__item {
+    --offset: 1.25em;
+    max-width: 70%; /* Reduced width on large screens */
+    min-height: 12em; /* Further reduced height on large screens */
+  }
+}
+
+/* Add spacing to the next section below */
+.next-section {
+  padding: 2em 0;
+  background: #f0f0f0;
+  text-align: center;
+}

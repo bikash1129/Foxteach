@@ -1,0 +1,182 @@
+/* Background grow-up animation (grows from center to full size) */
+@keyframes background-grow-up {
+  0% {
+    transform: scale(0); /* Starts smaller (scale down) */
+    opacity: 0; /* Initially invisible */
+  }
+  100% {
+    transform: scale(1); /* Grows to full size */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+/* Slide-in animation for the left-side content */
+@keyframes left-slide-in {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Slide-in animation for the right-side image */
+@keyframes right-slide-in {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Navbar slide-down animation */
+@keyframes navbar-slide-down {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Media query for large screens (larger than 768px) */
+@media (min-width: 768px) {
+  .navbar {
+    opacity: 0;
+    transform: translateY(-100%);
+    animation: navbar-slide-down 1s ease-out forwards 0.5s; /* Added delay for large screens */
+  }
+}
+
+/* Media query for medium screens (smaller than 768px but larger than 640px) */
+@media (max-width: 768px) and (min-width: 640px) {
+  .navbar {
+    opacity: 0;
+    transform: translateY(-100%);
+    animation: navbar-slide-down 0.8s ease-out forwards 0.2s; /* Slightly shorter delay for medium screens */
+  }
+}
+
+/* Media query for small screens */
+@media (max-width: 640px) {
+  .navbar {
+    opacity: 0;
+    transform: translateY(-100%);
+    animation: navbar-slide-down 0.6s ease-out forwards 0.1s; /* Shorter delay for small screens */
+  }
+}
+
+/* Additional animations for content sections */
+.background-overlay {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.background-overlay.animate-background {
+  animation: background-grow-up 1s ease-out forwards;
+}
+
+.right-image.animate-right-image {
+  animation: right-slide-in 0.2s ease-out forwards;
+}
+
+.left-content.animate-left-content {
+  animation: left-slide-in 0.2s ease-out forwards;
+}
+
+.navbar.animate-navbar {
+  animation: navbar-slide-down 0.1s ease-out forwards;
+}
+
+.navbar {
+  background-color: white;
+  z-index: 50;
+}
+
+
+
+/* For small screen logo */
+.small-screen-logo {
+  width: 100px; /* Adjust as per requirement */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* For large screen logo */
+.large-screen-logo {
+  width: 128px; /* Adjust as per requirement */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+
+/* General Navbar styles */
+.navbar {
+  position: fixed; /* Stick to the top of the viewport */
+  top: 0;
+  z-index: 50; /* High z-index ensures it's above other elements */
+  background-color: white; /* Background color to avoid transparency issues */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Small screen logo styles */
+.small-screen-logo {
+  width: 80px; /* Adjust for appropriate dimensions */
+  height: auto;
+}
+
+.large-screen-logo {
+  width: 120px; /* Adjust for appropriate dimensions */
+  height: auto;
+}
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%; /* Full height */
+  width: 200px; /* Set desired width */
+  z-index: 60; /* Ensure above other elements, including the navbar */
+  background-color: white;
+  box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Transition for sliding effect */
+.sidebar-closed {
+  transform: translateX(100%);
+}
+
+.sidebar-open {
+  transform: translateX(0);
+}
+
+/* Default Navbar styles (for larger screens) */
+.navbar {
+  height: 64px; /* Default height for large screens */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px; /* Horizontal padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+  .navbar {
+    height: 48px; /* Reduced height for small screens */
+    padding: 0 12px; /* Adjust padding */
+  }
+
+  .small-screen-logo {
+    width: 60px; /* Smaller logo for better fit */
+    height: auto;
+  }
+}

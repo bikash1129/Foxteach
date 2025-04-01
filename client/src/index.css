@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'BankGothic Lt BT';
+  src: url('/fonts/BankGothic-Lt-BT.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'BankGothic Lt BT', sans-serif;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'BankGothic Lt BT';
+  src: url('/fonts/BankGothic-Lt-BT.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'BankGothic Lt BT', sans-serif;
+}
+
+
+p {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+

@@ -1,0 +1,30 @@
+
+
+/* AOS Custom Animation */
+[data-aos="custom-scale"] {
+  transform: scale(1); /* Initial size */
+  transition: transform 0.5s ease-in-out, font-size 0.5s ease-in-out; /* Smooth transition */
+}
+
+[data-aos="custom-scale"].aos-animate {
+  transform: scale(1.1); /* Scale up when in view */
+}
+
+[data-aos="custom-scale"]:not(.aos-animate) {
+  transform: scale(1); /* Reset to original size when out of view */
+}
+
+/* Global AOS Animate Scaling */
+.aos-animate {
+  transform: scale(1.2); /* Apply larger scaling */
+  padding-left: 20px; /* Keep padding consistent */
+  padding-right: 20px;
+  transition: transform 1.2s ease-in-out; /* Smooth scale transition */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .aos-animate {
+    transform: scale(1.1); /* Smaller scaling for small screens */
+  }
+}
