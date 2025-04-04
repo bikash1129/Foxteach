@@ -128,8 +128,8 @@ const StickyStackedCards = () => {
               <div
                 className={`h-[300px] w-[250px] bg-cover bg-center rounded-lg shadow-lg relative transition-transform duration-700 ease-in-out z-10 ${
                   index === 1
-                    ? "group-hover:translate-y-[-150px] group-hover:rotate-[20deg] group-hover:-translate-y-16"
-                    : "group-hover:translate-y-[-150px] group-hover:rotate-[20deg] group-hover:-translate-y-16"
+                    ? "group-hover:translate-y-[-150px] group-hover:rotate-[20deg] "
+                    : "group-hover:translate-y-[-150px] group-hover:rotate-[20deg] "
                 }`}
                 style={{
                   backgroundImage: `url(${createImageUrl(
